@@ -1,0 +1,189 @@
+<div class="form-group">
+    <mk-box header="Billing Information" [isCollapsable]="false" [isRemovable]="false">
+        <div class="row">
+               
+            
+            <div class="col-md-3 col-xs-12 pull-right"> 
+                <button type="submit"  class="btn btn-success">Submit</button>
+                <button type="cancel" class="btn btn-danger" style="margin-left: 10px">Cancel</button>
+              </div>
+    
+            </div>
+    
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <label for="BillingDescription"><b>Service/Billing Description</b></label>
+          <input type="text" class="form-control" [(ngModel)]="billingObj.billingDescription"
+           name="BillingDescription" placeholder=""  required />
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="BillingCode"><b>Billing Code</b></label>
+          <input type="text" class="form-control"  [(ngModel)]="billingObj.billingCode" name="BillingCode" placeholder=""  required />
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="Discipline"><b>Discipline</b></label>
+          <select  [(ngModel)]="billingObj.discipline" class="form-control">
+            <option value="volvo">sample</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">trial</option>
+            <option value="audi">test</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="row" style="margin-top: 10px">
+        <div class="col-md-4 col-xs-12">
+          
+            <input id="checkbox2" class="form-check-input" type="checkbox" checked>
+            <label for="checkbox2">
+                Mark Inactive
+            </label>
+       
+      
+        </div>
+      </div>
+    
+      <br />
+    
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <label for="Revenue Code"><b>Revenue Code</b></label>
+          <select class="form-control"  [(ngModel)]="billingObj.revenueCode" style="width: 150px; margin-left: 5px">
+            <option value="volvo">sample</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">trial</option>
+            <option value="audi">test</option>
+          </select>
+        </div>
+        <div class="col-md-4 col-xs-12">
+          <label for="Change"><b>CPT/HCPCS</b></label>
+          <input type="text" placeholder=""  [(ngModel)]="billingObj.cpt" name="BillingCode" class="form-control" required >
+        </div>
+      </div>
+    
+      <br />
+    
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <label for="Change"><b>Modifier</b></label>
+          <input type="text" name="m-1" style="width: 25px;" >&nbsp;
+          <input type="text" name="m-2" style="width: 25px">&nbsp;
+          <input type="text" name="m-3" style="width: 25px">&nbsp;
+          <input type="text" name="m-3" style="width: 25px">&nbsp;
+    
+        </div>
+      </div>
+    
+      <br />
+      <div class="row">
+          <div class="col-md-4 col-xs-12">
+             
+              <input id="checkbox3" class="form-check-input" type="checkbox" checked>
+              <label for="checkbox3">
+                  Include Inactive Payer
+              </label>
+          </div>
+          <div class="col-md-4 col-xs-12">
+            
+              <input id="checkbox4" class="form-check-input" type="checkbox" checked>
+              <label for="checkbox4">
+                  Billable
+              </label>
+          </div>
+        </div>
+      
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <label for="Payer"><b>Payer</b></label>
+          <select class="form-control" >
+            <option value="volvo">sample</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">trial</option>
+            <option value="audi">test</option>
+          </select>
+        </div>
+        
+      </div>
+      <br />    
+    </mk-box>
+    
+    <mk-box header="Change per unit after first hour charge" [isCollapsable]="false" [isRemovable]="false">
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <label for="Charge"><b>Charge</b></label>
+          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.charge" name="BillingDescription" required>
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="From"><b>From</b></label>
+          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.billingDescription" name="BillingCode" required>
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="Through"><b>Through</b></label>
+          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.through" name="BillingCode" required>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <label for="Receivable"><b>Receivable</b></label>
+          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.receivable" name="BillingDescription" required>
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="Cost"><b>Cost</b></label>
+          <input class="form-control" type="text" placeholder=""  [(ngModel)]="billingObj.cost" name="BillingCode" required>
+        </div>
+      </div>
+    
+      <br /><br />
+    </mk-box>
+    
+    <mk-box header="Change per unit after first hour charge" [isCollapsable]="false" [isRemovable]="false">
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <input type="checkbox" value="Mark Inactive"> <label for="Change" style="margin-left: 5px"><b> 1Visit (1 Unit = 1
+              Visit) </b></label> <br />
+          <input type="checkbox" value="Mark Inactive"> <label for="Change" style="margin-left: 5px"><b> Time </b></label>
+          <br /><br /> <br />
+    
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="Change"><b>1 Unit = </b></label> <br /><br />
+          <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
+          <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
+          <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
+        </div>
+    
+        <div class="col-md-4 col-xs-12">
+          <label for="Change"><b>Round remaining minutes to the nearest =</b></label> <br /><br />
+          <input type="checkbox" value="Mark Inactive"> No Rounding <br /><br />
+          <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
+          <input type="checkbox" value="Mark Inactive"> 30 Minutes <br /><br />
+          <input type="checkbox" value="Mark Inactive"> 1 Hour <br /><br />
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-md-8 col-xs-12">
+          <input type="checkbox" name="MarkInactive" value="MarkInactive" checked>
+          <label for="Change" style="margin-left: 5px"><b>Just like Medicare(1 Unit = 15 minutes and Charge is calculated
+              per Visit)</b></label>
+        </div>
+      </div>
+    
+      <div class="row">
+               
+         
+          <div class="col-md-3 col-xs-12 pull-right"> 
+              <button type="submit" (click)="addBill()" class="btn btn-success">Submit</button>
+              <button type="cancel" class="btn btn-danger" style="margin-left: 10px">Cancel</button>
+            </div>
+          </div>
+    
+    </mk-box>
+    </div>
