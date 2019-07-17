@@ -14,22 +14,30 @@
         <div class="col-md-4 col-xs-12">
           <label for="BillingDescription"><b>Service/Billing Description</b></label>
           <input type="text" class="form-control" [(ngModel)]="billingObj.billingDescription"
-           name="BillingDescription" placeholder=""  required />
+           name="billingDescription" placeholder=""  required />
+           <div style="color: red">
+            {{errorbillingDescription}}</div> <br>
         </div>
+        
     
         <div class="col-md-4 col-xs-12">
           <label for="BillingCode"><b>Billing Code</b></label>
-          <input type="text" class="form-control"  [(ngModel)]="billingObj.billingCode" name="BillingCode" placeholder=""  required />
+          <input type="text" class="form-control"  [(ngModel)]="billingObj.billingCode" 
+          name="billingCode" placeholder=""  required />
+          <div style="color: red">
+            {{errorbillingCode}}</div> <br>
         </div>
     
         <div class="col-md-4 col-xs-12">
           <label for="Discipline"><b>Discipline</b></label>
-          <select  [(ngModel)]="billingObj.discipline" class="form-control">
+          <select  class="form-control">
             <option value="volvo">sample</option>
             <option value="saab">Saab</option>
             <option value="mercedes">trial</option>
             <option value="audi">test</option>
           </select>
+          <div style="color: red">
+            {{errordiscipline}}</div> <br>
         </div>
       </div>
     
@@ -50,16 +58,22 @@
       <div class="row">
         <div class="col-md-4 col-xs-12">
           <label for="Revenue Code"><b>Revenue Code</b></label>
-          <select class="form-control"  [(ngModel)]="billingObj.revenueCode" style="width: 150px; margin-left: 5px">
+          <select class="form-control"  [(ngModel)]="billingObj.revenueCode"
+           style="width: 150px; margin-left: 5px">
             <option value="volvo">sample</option>
             <option value="saab">Saab</option>
             <option value="mercedes">trial</option>
             <option value="audi">test</option>
           </select>
+          <div style="color: red">
+            {{errorrevenueCode}}</div> <br>
         </div>
         <div class="col-md-4 col-xs-12">
-          <label for="Change"><b>CPT/HCPCS</b></label>
-          <input type="text" placeholder=""  [(ngModel)]="billingObj.cpt" name="BillingCode" class="form-control" required >
+          <label for="cpt"><b>CPT/HCPCS</b></label>
+          <input type="text" placeholder=""  [(ngModel)]="billingObj.cpt" 
+          name="cpt" class="form-control" required >
+          <div style="color: red">
+            {{errorcpt}}</div> <br>
         </div>
       </div>
     
@@ -67,12 +81,13 @@
     
       <div class="row">
         <div class="col-md-4 col-xs-12">
-          <label for="Change"><b>Modifier</b></label>
+          <label for="Modifier"><b>Modifier</b></label>
           <input type="text" name="m-1" style="width: 25px;" >&nbsp;
           <input type="text" name="m-2" style="width: 25px">&nbsp;
           <input type="text" name="m-3" style="width: 25px">&nbsp;
-          <input type="text" name="m-3" style="width: 25px">&nbsp;
-    
+          <input type="text" name="m-4" style="width: 25px">&nbsp;
+          <div style="color: red">
+            {{errormodifier}}</div> <br>
         </div>
       </div>
     
@@ -84,6 +99,7 @@
               <label for="checkbox3">
                   Include Inactive Payer
               </label>
+
           </div>
           <div class="col-md-4 col-xs-12">
             
@@ -103,6 +119,8 @@
             <option value="mercedes">trial</option>
             <option value="audi">test</option>
           </select>
+          <div style="color: red">
+            {{errorpayer}}</div> <br>
         </div>
         
       </div>
@@ -113,29 +131,49 @@
       <div class="row">
         <div class="col-md-4 col-xs-12">
           <label for="Charge"><b>Charge</b></label>
-          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.charge" name="BillingDescription" required>
+          <input type="text" class="form-control" placeholder=""  
+          [(ngModel)]="billingObj.charge" 
+          name="charge" required>
+          <div style="color: red">
+            {{errorcharge}}</div> <br>
         </div>
     
         <div class="col-md-4 col-xs-12">
           <label for="From"><b>From</b></label>
-          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.billingDescription" name="BillingCode" required>
+          <input type="text" class="form-control" placeholder=""  
+          [(ngModel)]="billingObj.from" 
+          name="from" required>
+          <div style="color: red">
+            {{errorfrom}}</div> <br>
         </div>
     
         <div class="col-md-4 col-xs-12">
           <label for="Through"><b>Through</b></label>
-          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.through" name="BillingCode" required>
+          <input type="text" class="form-control" placeholder=""  
+          [(ngModel)]="billingObj.through" 
+          name="through" required>
+          <div style="color: red">
+            {{errorthrough}}</div> <br>
         </div>
       </div>
       <br />
       <div class="row">
         <div class="col-md-4 col-xs-12">
           <label for="Receivable"><b>Receivable</b></label>
-          <input type="text" class="form-control" placeholder=""  [(ngModel)]="billingObj.receivable" name="BillingDescription" required>
+          <input type="text" class="form-control" placeholder=""  
+          [(ngModel)]="billingObj.receivable"
+           name="receivable" required>
+           <div style="color: red">
+            {{errorreceivable}}</div> <br>
         </div>
     
         <div class="col-md-4 col-xs-12">
           <label for="Cost"><b>Cost</b></label>
-          <input class="form-control" type="text" placeholder=""  [(ngModel)]="billingObj.cost" name="BillingCode" required>
+          <input class="form-control" type="text" placeholder="" 
+           [(ngModel)]="billingObj.cost" 
+           name="cost" required>
+           <div style="color: red">
+            {{errorcost }}</div> <br>
         </div>
       </div>
     
@@ -145,22 +183,24 @@
     <mk-box header="Change per unit after first hour charge" [isCollapsable]="false" [isRemovable]="false">
       <div class="row">
         <div class="col-md-4 col-xs-12">
-          <input type="checkbox" value="Mark Inactive"> <label for="Change" style="margin-left: 5px"><b> 1Visit (1 Unit = 1
-              Visit) </b></label> <br />
-          <input type="checkbox" value="Mark Inactive"> <label for="Change" style="margin-left: 5px"><b> Time </b></label>
+          <input type="checkbox" value="Mark Inactive"> 
+          <label for="1Visit" style="margin-left: 5px">
+            <b> 1 Visit (1 Unit = 1Visit) </b></label> <br />
+          <input type="checkbox" value="Mark Inactive">
+          <label for="Time" style="margin-left: 5px"><b> Time </b></label>
           <br /><br /> <br />
     
         </div>
     
         <div class="col-md-4 col-xs-12">
-          <label for="Change"><b>1 Unit = </b></label> <br /><br />
+          <label for="1 Unit"><b>1 Unit = </b></label> <br /><br />
           <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
           <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
           <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
         </div>
     
         <div class="col-md-4 col-xs-12">
-          <label for="Change"><b>Round remaining minutes to the nearest =</b></label> <br /><br />
+          <label for="Round"><b>Round remaining minutes to the nearest =</b></label> <br /><br />
           <input type="checkbox" value="Mark Inactive"> No Rounding <br /><br />
           <input type="checkbox" value="Mark Inactive"> 15 Minutes <br /><br />
           <input type="checkbox" value="Mark Inactive"> 30 Minutes <br /><br />
@@ -171,7 +211,7 @@
       <div class="row">
         <div class="col-md-8 col-xs-12">
           <input type="checkbox" name="MarkInactive" value="MarkInactive" checked>
-          <label for="Change" style="margin-left: 5px"><b>Just like Medicare(1 Unit = 15 minutes and Charge is calculated
+          <label for="Just like Medicare" style="margin-left: 5px"><b>Just like Medicare(1 Unit = 15 minutes and Charge is calculated
               per Visit)</b></label>
         </div>
       </div>
